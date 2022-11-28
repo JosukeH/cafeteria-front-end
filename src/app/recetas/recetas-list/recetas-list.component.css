@@ -1,0 +1,91 @@
+.principal{
+    margin-top: 60px;
+}
+
+.ingredientes{
+    background-color: #68927a;
+    color: #eaefee;
+    padding: 40px;
+}
+
+.recetas{
+    background-color: #eaefee;
+    color: #191b1a;
+    padding: 40px;
+}
+
+.row{
+    width: 101%;
+}
+
+img{
+    width: 100%;
+}
+
+.holi{
+    height: 360px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.holi2{
+    height: 580px;
+}
+
+.hi{
+    text-align: right;
+}
+
+h5{
+    height: 50px;
+    margin-top: 5px;
+}
+
+.tarjeta{
+    text-align: center;
+    background-color: #CCCAB1;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    width: 32%;
+}
+
+.btn{
+    background-color: #68927a;
+    border-color: #68927a;
+    color: #eaefee;
+}
+
+.btn:hover{
+    background-color: #49392C;
+    border-color: #49392C;
+    color: #eaefee;
+}
+
+.ing{
+    width: 200px;
+    text-align: center;
+}
+
+.can{
+    width: 150px;
+    text-align: center;
+}
+
+th{
+    background-color: #eaefef;
+}
+
+table{
+    border: #eaefef;
+}
+
+td{
+    color: #eaefef;
+}
+
+.tt{
+    text-align: center;
+    color: #eaefef;
+}

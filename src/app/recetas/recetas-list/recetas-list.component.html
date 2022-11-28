@@ -1,0 +1,92 @@
+<div class="row principal">
+    <div class="col-lg-8 recetas">
+        <div class="row">
+            <form>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h2>Filtro:</h2>
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="radio" id="tipoF" name="Tipo" value="Frío" [(ngModel)]="listFilter">
+                        <label for="tipoF">Frío</label><br>
+                        <input type="radio" id="tipoC" name="Tipo" value="Caliente" [(ngModel)]="listFilter">
+                        <label for="tipoC">Caliente</label>
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="radio" id="catC" name="Categoria" value="Café" [(ngModel)]="catFilter">
+                        <label for="catC">Café</label><br>
+                        <input type="radio" id="catT" name="Categoria" value="Té" [(ngModel)]="catFilter">
+                        <label for="catT">Té</label>
+                    </div>
+                    <div class="col-lg-3 hi">
+                        <button type="reset" class="btn btn-primary">Borrar Filtro</button>
+                    </div>
+                </div>               
+            </form>
+        </div>
+        <hr>
+        <div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Bebidas</h2>
+                </div>
+                <div class="col-lg-6 hi">
+                    <button class="btn btn-primary" (click)="ocultar()">Ocultar Receta</button>
+                </div>
+            </div>
+            <div class="row overflow-auto holi">
+                <div class="col-lg-4 tarjeta" *ngFor="let receta of recetas | recetaFiltro: listFilter | categoriaFiltro: catFilter">
+                    <img [src]="receta.ImagenUrl" [title]="receta.Nombre">
+                    <h5>{{receta.Nombre}}</h5>
+                    <p>${{receta.Precio}}.00</p>
+                    <button (click)="filtroId(receta.Nombre)" class="btn btn-primary">Mostrar Receta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 ingredientes holi2">
+        <table class="table table-bordered" [style.display]="displaye">
+            <h5 class="tt" *ngFor="let receta of recetas | idFiltro: idFilter">{{receta.Nombre}}</h5>
+            <thead>
+                <tr>
+                    <th class="ing">Ingrediente</th>
+                    <th class="can">Cantidad</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let receta of recetas | idFiltro: idFilter">
+                <tr>
+                    <td>{{receta.Ingrediente1}}</td>
+                    <td>{{receta.Cantidad1}}</td>
+                </tr>
+                <tr>
+                    <td>{{receta.Ingrediente2}}</td>
+                    <td>{{receta.Cantidad2}}</td>
+                </tr>
+                <tr>
+                    <td>{{receta.Ingrediente3}}</td>
+                    <td>{{receta.Cantidad3}}</td>
+                </tr>
+                <tr>
+                    <td>{{receta.Ingrediente4}}</td>
+                    <td>{{receta.Cantidad4}}</td>
+                </tr>
+                <tr>
+                    <td>{{receta.Ingrediente5}}</td>
+                    <td>{{receta.Cantidad5}}</td>
+                </tr>
+                <tr>
+                    <td>{{receta.Ingrediente6}}</td>
+                    <td>{{receta.Cantidad6}}</td>
+                </tr>
+                <tr>
+                    <td>{{receta.Ingrediente7}}</td>
+                    <td>{{receta.Cantidad7}}</td>
+                </tr>
+                <tr>
+                    <td>{{receta.Ingrediente8}}</td>
+                    <td>{{receta.Cantidad8}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

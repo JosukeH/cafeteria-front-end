@@ -1,0 +1,98 @@
+<div class="row principal">
+    <div class="col-lg-7 recetas">
+        <div class="row">
+            <p class="col-lg-6">Usuario</p>
+            <div class="col-lg-6 hey">
+                <p><b>Fecha:</b> {{CurrentDate | date:'dd-MM-yyyy'}}</p>
+                <p><b>Hora:</b> {{CurrentDate | date:'HH:mm'}}</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <form>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h2>Filtro:</h2>
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="radio" id="tipoF" name="Tipo" value="Frío" [(ngModel)]="listFilter">
+                        <label for="tipoF">Frío</label><br>
+                        <input type="radio" id="tipoC" name="Tipo" value="Caliente" [(ngModel)]="listFilter">
+                        <label for="tipoC">Caliente</label>
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="radio" id="catC" name="Categoria" value="Café" [(ngModel)]="catFilter">
+                        <label for="catC">Café</label><br>
+                        <input type="radio" id="catT" name="Categoria" value="Té" [(ngModel)]="catFilter">
+                        <label for="catT">Té</label>
+                    </div>
+                    <div class="col-lg-3 hi">
+                        <button type="reset" class="btn btn-primary">Borrar Filtro</button>
+                    </div>
+                </div>               
+            </form>
+        </div>
+        <hr>
+        <div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Bebidas</h2>
+                </div>
+            </div>
+            <div class="row overflow-auto holi">
+                <div class="col-lg-4 tarjeta" *ngFor="let inicio of inici | recetasFiltro: listFilter | categoriasFiltro: catFilter">
+                    <img [src]="inicio.ImagenUrl" [title]="inicio.Nombre">
+                    <h6>{{inicio.Nombre}}</h6>
+                    <p>${{inicio.Precio}}.00</p>
+                    <button class="btn btn-primary">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5 ingredientes holi2">
+        <div class="latabla">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>SubTotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="latabla">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>No. Artículos</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <button class="btn btn-primary btt">Pagar</button>                
+            </div>
+            <div class="col-lg-6">
+                <button class="btn btn-primary btt">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
