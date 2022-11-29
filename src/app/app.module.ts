@@ -11,6 +11,9 @@ import { RecetasListComponent } from './recetas/recetas-list/recetas-list.compon
 import { CatFiltroPipe, IdFiltroPipe, RecetaFiltroPipe } from './recetas/recetas-filtro.pipe';
 import { InicioListComponent } from './inicio/inicio-list/inicio-list.component';
 import { CatsFiltroPipe, RecetasFiltroPipe } from './inicio/inicio-filtro.pipe';
+import { ProductosComponent } from './productos/productos.component';
+import { VentasComponent } from './ventas/ventas.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { CatsFiltroPipe, RecetasFiltroPipe } from './inicio/inicio-filtro.pipe';
     IdFiltroPipe,
     InicioListComponent,
     RecetasFiltroPipe,
-    CatsFiltroPipe
+    CatsFiltroPipe,
+    ProductosComponent,
+    VentasComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,

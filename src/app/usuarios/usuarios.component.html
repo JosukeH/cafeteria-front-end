@@ -1,0 +1,124 @@
+<div class="row principal">
+    <div class="col-lg-7 recetas">
+        <div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Usuarios</h2>
+                </div>
+            </div>
+            <div class="row holi overflow-auto">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombres</th>
+                            <th>Usuario</th>
+                            <th>Correo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button class="btn btn-primary btt tt2" (click)="verUser()">Ver</button>
+                                <button class="btn btn-primary btt tt2" (click)="editUser()">Editar</button>
+                                <button class="btn btn-primary btt tt2" (click)="borrarUser()">Borrar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5 ingredientes holi2">
+        <div [style.display]="displayVer">
+            <div class="latabla">
+                <h5>Ver Usuario</h5>
+                <hr>
+                <form action="">
+                    <div class="mb-3 mt-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" placeholder="" name="name" readonly>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="user" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="user" placeholder="" name="user" readonly>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="correo" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="correo" placeholder="" name="correo" readonly>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div [style.display]="displayEdit">
+            <div class="latabla">
+                <h5>Editar Usuario</h5>
+                <hr>
+                <form action="">
+                    <div class="mb-3 mt-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" placeholder="" name="name">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="user" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="user" placeholder="" name="user" readonly>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="correo" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="correo" placeholder="" name="correo">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="pass" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="pass" placeholder="" name="pass">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="pass" class="form-label">Repetir Contraseña</label>
+                        <input type="password" class="form-control" id="pass" placeholder="" name="pass">
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <button class="btn btn-primary btt">Guardar</button>                
+                </div>
+                <div class="col-lg-6">
+                    <button class="btn btn-primary btt">Cancelar</button>
+                </div>
+            </div>
+        </div>
+        <div [style.display]="displayBorr">
+            <div class="latabla">
+                <h5>Borrar Usuario</h5>
+                <hr>
+                <form action="">
+                    <div class="mb-3 mt-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" placeholder="" name="name" readonly>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="user" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="user" placeholder="" name="user" readonly>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="correo" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="correo" placeholder="" name="correo" readonly>
+                    </div>
+                </form>
+                <p>¿Seguro que quieres borrar este usuario?</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <button class="btn btn-primary btt">Borrar</button>                
+                </div>
+                <div class="col-lg-6">
+                    <button class="btn btn-primary btt">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

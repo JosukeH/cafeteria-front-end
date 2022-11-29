@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-img{
-    width: 60px;
-}
-
 .active{
     font-family: 'Pacifico', cursive;
     font-size: 1.5rem;
@@ -19,3 +15,8 @@ a{
     color: #eaeaea;
     vertical-align: middle;
 }
+
+img{
+    width: 20px;
+}
+

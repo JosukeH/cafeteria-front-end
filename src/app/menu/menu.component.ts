@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  display:string="none";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  aparece(){
+      this.display="block";
+  }
+
+  desaparece(){
+    this.display="none";
   }
 
 }
