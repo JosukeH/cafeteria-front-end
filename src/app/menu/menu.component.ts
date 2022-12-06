@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +10,7 @@ export class MenuComponent implements OnInit {
 
   display:string="none";
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,12 @@ export class MenuComponent implements OnInit {
 
   desaparece(){
     this.display="none";
+  }
+  cerrar(){
+      console.log('hola');
+      localStorage.removeItem('user')
+      this.router.navigate(['/'])
+
   }
 
 }

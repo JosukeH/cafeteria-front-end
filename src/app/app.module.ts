@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule, routing } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
@@ -14,7 +13,7 @@ import { CatsFiltroPipe, RecetasFiltroPipe } from './inicio/inicio-filtro.pipe';
 import { ProductosComponent } from './productos/productos.component';
 import { VentasComponent } from './ventas/ventas.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +34,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    routing
+    routing,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

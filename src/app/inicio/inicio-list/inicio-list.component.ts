@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { IInicio } from '../inicio';
 
@@ -12,7 +13,6 @@ export class InicioListComponent implements OnInit {
   catFilter:string='';
   idFilter:string='';
   filtroN:string='';
-
   CurrentDate = new Date();
 
   displaye:string='none';
@@ -28,9 +28,19 @@ export class InicioListComponent implements OnInit {
   }
 
   constructor() { }
+  user: any = {}
+  userP: any =  {}
+  
 
   ngOnInit(): void {
+    this.user = localStorage.getItem('user') 
+    this.userP = JSON.parse(this.user)
+    console.log(this.userP);
+
   }
+
+  
+  
 
   inici:IInicio[]=[
     {

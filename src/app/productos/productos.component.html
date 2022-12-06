@@ -3,7 +3,7 @@
         <div>
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Productos</h2>
+                    <h2>Ingredientes</h2>
                 </div>
             </div>
             <div class="row holi">
@@ -20,16 +20,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <button class="btn btn-primary btt">Agregar</button>
-                            </td>
+                        <tr *ngFor="let producto of listProductos">
+                            <td>{{producto.id}}</td>
+                            <td>{{producto.nombre}}</td>
+                            <td>{{producto.porcion}}</td>
+                            <td>{{producto.precio}}</td>
+                            <td>{{producto.tipoIngrediente}}</td>
+                            <td>{{producto.unidadTotal}}</td>
+                            <td><button class="btn btn-primary btt">Agregar</button></td>
+                            
+                            <!-- <td><</td> -->
                         </tr>
                     </tbody>
                 </table>

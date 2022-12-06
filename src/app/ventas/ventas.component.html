@@ -3,7 +3,7 @@
         <div>
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Ventas</h2>
+                    <h2 class="mt-1">Ventas</h2>
                 </div>
             </div>
             <div class="row holi">
@@ -21,17 +21,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <button class="btn btn-primary btt" (click)="verVenta()">Ver</button>
-                            </td>
+                        <tr *ngFor="let venta of listaVentas">
+
+                            <td>{{venta._id}}</td>
+                            <td>{{venta.total}}</td>
+                            <td><pre>{{venta.productos | json}} </pre></td>
+                                        
                         </tr>
                     </tbody>
                 </table>
