@@ -16,6 +16,12 @@ export class AuthService {
     return this.httpClient.post(`${this.Auth_Server}/api/users/login`, user) 
   }
 
+
+  register(user: any) : any{
+    return this.httpClient.post(`${this.Auth_Server}/api/users`, user) 
+  }
+
+
   logout(): void{
     this.token = ''
     localStorage.removeItem('ACCESS_TOKEN');

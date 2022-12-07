@@ -1,7 +1,8 @@
 export interface IInicio {
-    recetaId:number;
-    Nombre:string;
-    Precio:number;
+    _id?:string,
+    id:number;
+    nombre:string;
+    precio:number;
     Tipo:string;
     Categoria:string;
     ImagenUrl:string;

@@ -18,16 +18,28 @@ export class LoginComponent implements OnInit {
   email = ''
   password= ''
   error = ''
-  
-
-  rName = ''
-  rEmail = ''
-  rPassword = ''
-  rPasswordAdmin = ''
-  
+  mensaje = {}
+  registerForm = {
+    name: '',
+    email : '',
+    password: '',
+  }
 
   register(){
-
+    console.log(this.registerForm);
+    this._loginServe.register(this.registerForm).subscribe(
+      res => {
+        console.log('res')
+        console.log(res)
+        this.mensaje = {"mensaje": "user creado con exito"}
+      },
+      err => {
+        this.error = err.error
+        console.log(err)
+      },
+      () => console.log('fin')
+    
+      )
   }
   
   

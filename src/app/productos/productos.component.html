@@ -27,7 +27,7 @@
                             <td>{{producto.precio}}</td>
                             <td>{{producto.tipoIngrediente}}</td>
                             <td>{{producto.unidadTotal}}</td>
-                            <td><button class="btn btn-primary btt">Agregar</button></td>
+                            <td><button class="btn btn-primary btt" (click)="selectIngrediente(producto)">Agregar</button></td>
                             
                             <!-- <td><</td> -->
                         </tr>
@@ -37,49 +37,35 @@
         </div>
     </div>
     <div class="col-lg-5 ingredientes holi2">
+        <h2 class="">Editar</h2>
         <div class="latabla">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Precio</th>
-                        <th>SubTotal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="row">
+                <div class="col-lg-6 mb-3">
+                    <label for="pwd" class="form-label text-black">Nombre</label>
+                    <input type="text" class="form-control" [(ngModel)]="form.nombre"  placeholder="" name="nombre">
+                </div>
+                <div class="col-lg-6 mb-3">
+                    <label for="pwd" class="form-label text-black">Unidad disponible</label>
+                    <input type="text" class="form-control"  [(ngModel)]="form.unidadTotal" placeholder="" name="unidadTotal">
+                </div>
+                <div class="col-lg-6 mb-3">
+                    <label for="pwd" class="form-label text-black">Porcion</label>
+                    <input type="text" class="form-control"  [(ngModel)]="form.porcion" placeholder="" name="porcion">
+                </div>
+                <div class="col-lg-6 mb-3">
+                    <label for="pwd" class="form-label text-black">Precio</label>
+                    <input type="text" class="form-control"  [(ngModel)]="form.precio" placeholder="" name="precio">
+                </div>
+            </div>       
         </div>
-        <div class="latabla">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>No. Artículos</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <!-- <div class="latabla">
+          
+        </div> -->
         <div class="row">
             <div class="col-lg-6">
-                <button class="btn btn-primary btt">Pedir</button>                
+                <button class="btn btn-primary btt" (click)="handleUpdate()">Pedir</button>                
             </div>
-            <div class="col-lg-6">
-                <button class="btn btn-primary btt">Cancelar</button>
-            </div>
+          
         </div>
     </div>
 </div>

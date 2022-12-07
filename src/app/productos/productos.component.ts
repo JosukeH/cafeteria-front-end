@@ -11,9 +11,42 @@ export class ProductosComponent implements OnInit {
 
   constructor(private _productoService: IngredientesService) { }
 
+  form = {
+    nombre :'',
+    unidadTotal :0,
+    porcion: 0 ,
+    precio: 0,
+    id: 0
+  }
+
+
+
   ngOnInit(): void {
     this.obtenerProductos()
   }
+
+  selectIngrediente(data):void {
+    this.form = {
+      nombre :data.nombre,
+      unidadTotal :data.unidadTotal,
+      porcion: data.porcion,
+      precio: data.precio,
+      id: data.id
+    }
+    console.log(this.form);
+  }
+
+  handleUpdate():void{
+    this._productoService.updateIngrediente(this.form).subscribe(data => {
+      console.log(data);
+    }, 
+    error => {
+      console.log(error);
+      
+    })
+  }
+
+  
 
   obtenerProductos(){
     this._productoService.getIngredientes().subscribe(data => {

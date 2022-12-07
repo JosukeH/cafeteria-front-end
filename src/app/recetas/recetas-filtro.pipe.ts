@@ -6,10 +6,10 @@ import { IReceta } from './recetas';
 })
 export class RecetaFiltroPipe implements PipeTransform {
 
-  transform(value: IReceta[], args:string): IReceta[] {
+  transform(value: any[], args:string): any[] {
     let filter:string=args ? args.toLocaleLowerCase():'';
 
-    return filter ? value.filter((receta:IReceta)=>
+    return filter ? value.filter((receta:any)=>
       receta.Tipo.toLocaleLowerCase().indexOf(filter)!= -1
     ):value;
   }

@@ -16,4 +16,8 @@ export class VentasService {
     return this.httpClient.get(this.Auth_Server)
   }
 
+   postVenta(list):Observable<any>{
+    return this.httpClient.post(this.Auth_Server, list)
+   }
+
 }

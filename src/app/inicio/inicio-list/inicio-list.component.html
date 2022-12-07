@@ -41,11 +41,11 @@
             </div>
             <div class="row overflow-auto holi">
                 <div class="col-lg-4 tarjeta" *ngFor="let inicio of inici | recetasFiltro: listFilter | categoriasFiltro: catFilter">
-                    <img [src]="inicio.ImagenUrl" [title]="inicio.Nombre">
-                    <h6>{{inicio.Nombre}}</h6>
-                    <p>${{inicio.Precio}}.00</p>
-                    <button class="btn btn-primary">Agregar</button>
-                </div>
+                    <img [src]="inicio.ImagenUrl" [title]="inicio.nombre">
+                    <h6>{{inicio.nombre}}</h6>
+                    <p>${{inicio.precio}}.00</p>
+                    <button class="btn btn-primary" (click)="addToList(inicio)">Agregar</button>
+                </div> 
             </div>
         </div>
     </div>
@@ -53,19 +53,19 @@
         <div class="latabla">
             <table class="table table-bordered">
                 <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
+                    <tr >
+                        <th>Id</th>
+                        <th>Nombre</th>
                         <th>Precio</th>
-                        <th>SubTotal</th>
+                        <th>Tipo</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let prod of selectProductos">
+                        <td>{{prod.id}}</td>
+                        <td>{{prod.nombre}}</td>
+                        <td>{{prod.precio}}</td>
+                        <td>{{prod.Tipo}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -80,18 +80,18 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td>{{counter}}</td>
+                        <td>{{total}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="row">
             <div class="col-lg-6">
-                <button class="btn btn-primary btt">Pagar</button>                
+                <button class="btn btn-primary btt" (click)="sendPedido()   ">Pagar</button>                
             </div>
             <div class="col-lg-6">
-                <button class="btn btn-primary btt">Cancelar</button>
+                <button class="btn btn-primary btt" (click)="clearPedido()" >Cancelar</button>
             </div>
         </div>
     </div>

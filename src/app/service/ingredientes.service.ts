@@ -15,4 +15,8 @@ export class IngredientesService {
     return this.httpClient.get(this.Auth_Server)
   }
 
+  updateIngrediente(ingre): Observable<any>{
+    return this.httpClient.put(this.Auth_Server, ingre)
+  }
+
 }
