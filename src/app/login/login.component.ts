@@ -18,6 +18,19 @@ export class LoginComponent implements OnInit {
   email = ''
   password= ''
   error = ''
+  
+
+  rName = ''
+  rEmail = ''
+  rPassword = ''
+  rPasswordAdmin = ''
+  
+
+  register(){
+
+  }
+  
+  
   login(){
     console.log('click');
     const email = this.email
