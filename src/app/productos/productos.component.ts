@@ -39,6 +39,8 @@ export class ProductosComponent implements OnInit {
   handleUpdate():void{
     this._productoService.updateIngrediente(this.form).subscribe(data => {
       console.log(data);
+      this.obtenerProductos()
+
     }, 
     error => {
       console.log(error);

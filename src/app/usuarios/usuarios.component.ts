@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../service/auth.service';
+import { IngredientesService } from '../service/ingredientes.service';
+import { UsersService } from '../service/users.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -6,31 +9,54 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
+  listProductos: any[] = []
 
-  displayVer:string="none";
-  displayEdit:string="none";
-  displayBorr:string="none";
+  constructor(private _userService: AuthService) { }
 
-  constructor() { }
+  form = {
+    name :'',
+    email: '',
+    _id: ''
+  }
+
+
 
   ngOnInit(): void {
+    this.obtenerProductos()
   }
 
-  verUser(){
-    this.displayVer="block";
-    this.displayEdit="none";
-    this.displayBorr="none";
+  selectIngrediente(data):void {
+    this.form = {
+      name :data.name,
+      email: data.email,
+      _id: data._id
+    }
+    console.log(this.form);
   }
 
-  editUser(){
-    this.displayVer="none";
-    this.displayEdit="block";
-    this.displayBorr="none";
+  handleUpdate():void{
+    this._userService.updateUser(this.form).subscribe(data => {
+      console.log(data);
+      this.obtenerProductos()
+
+    }, 
+    error => {
+      console.log(error);
+      
+    })
   }
 
-  borrarUser(){
-    this.displayVer="none";
-    this.displayEdit="none";
-    this.displayBorr="block";
+  
+
+  obtenerProductos(){
+    this._userService.getUsers().subscribe(data => {
+      console.log(data);
+      this.listProductos = data
+      
+    }, 
+    error => {
+      console.log(error);
+      
+    })
   }
 }

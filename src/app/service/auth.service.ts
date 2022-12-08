@@ -12,6 +12,14 @@ export class AuthService {
   
   constructor(private httpClient: HttpClient) { }
 
+  getUsers() : any {
+    return this.httpClient.get(`${this.Auth_Server}/api/users`) 
+  }
+
+  updateUser(updateUser: any){
+    return this.httpClient.put(`${this.Auth_Server}/api/users`, updateUser) 
+  }
+
   login(user: any) : any{
     return this.httpClient.post(`${this.Auth_Server}/api/users/login`, user) 
   }

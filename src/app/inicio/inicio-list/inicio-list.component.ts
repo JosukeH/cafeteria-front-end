@@ -98,6 +98,7 @@ export class InicioListComponent implements OnInit {
 
   inici:IInicio[]=[
     {
+      "_id": "63916065d0493ac73888d953",
       "id":1,
       "nombre":'Menta Helada Mocha',
       "precio":118,
@@ -106,6 +107,7 @@ export class InicioListComponent implements OnInit {
       "ImagenUrl":'./assets/medios/Recetas/01.webp'
     },
     {
+      "_id": "63916361d0493ac73888d970",
       "id":2,
       "nombre":'Nuez Moscada Latte',
       "precio":114,
@@ -137,14 +139,15 @@ export class InicioListComponent implements OnInit {
     //   "Categoria":'Café',
     //   "ImagenUrl":'./assets/medios/Recetas/05.webp'
     // },
-    // {
-    //   "id":6,
-    //   "nombre":'Espumante Espresso con Menta',
-    //   "precio":77,
-    //   "Tipo":'Frío',
-    //   "Categoria":'Café',
-    //   "ImagenUrl":'./assets/medios/Recetas/06.webp'
-    // },
+    {
+      "_id": "63916526d0493ac73888d975",
+      "id":6,
+      "nombre":'Espumante Espresso con Menta',
+      "precio":77,
+      "Tipo":'Frío',
+      "Categoria":'Café',
+      "ImagenUrl":'./assets/medios/Recetas/06.webp'
+    },
     {
       "id":7,
       "_id":"638d363a0f2e2242eac441e7",
@@ -179,6 +182,7 @@ export class InicioListComponent implements OnInit {
     //   "ImagenUrl":'./assets/medios/Recetas/10.webp'
     // },
     {
+      "_id": "63914bd44f0f09c98b6fad8b",
       "id":11,
       "nombre":'Cappuccino',
       "precio":90,
@@ -187,6 +191,7 @@ export class InicioListComponent implements OnInit {
       "ImagenUrl":'./assets/medios/Recetas/11.webp'
     },
     {
+      "_id": '63916639d0493ac73888d981',
       "id":12,
       "nombre":'Caffé Mocha',
       "precio":107,
@@ -195,6 +200,7 @@ export class InicioListComponent implements OnInit {
       "ImagenUrl":'./assets/medios/Recetas/12.webp'
     },
     {
+      "_id": "63916752d0493ac73888d9ab",
       "id":13,
       "nombre":'Infusión de Té Verde a la Cúrcuma',
       "precio":74,
@@ -203,6 +209,7 @@ export class InicioListComponent implements OnInit {
       "ImagenUrl":'./assets/medios/Recetas/13.png'
     },
     {
+      "_id": "639167b1d0493ac73888d9b2",
       "id":14,
       "nombre":'Infusión de Manzana Canela',
       "precio":76,
@@ -211,6 +218,7 @@ export class InicioListComponent implements OnInit {
       "ImagenUrl":'./assets/medios/Recetas/14.png'
     },
     {
+      "_id": "63916809d0493ac73888d9b9",
       "id":15,
       "nombre":'Té Helado de limón y jengibre',
       "precio":75,
